@@ -69,7 +69,7 @@ RUN ver=3.1.1 \
 	&& LIBS="-lpthread -lm" \
 	LDFLAGS="-Wl,-static -static -static-libgcc -L/usr/local/libev/lib" \
 	CFLAGS="-I/usr/local/libev/include" \
-	./configure --host=mipsel-linux-gnu --prefix=/usr/local/shadowsocks-libev \
+	./configure --host=mipsel-linux-gnu --prefix=/usr/local/ss/shadowsocks-libev \
 	--disable-ssp \
 	--disable-documentation \
 	--with-mbedtls=/usr/local/mbedtls \
