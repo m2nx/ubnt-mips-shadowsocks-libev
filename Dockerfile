@@ -72,7 +72,7 @@ RUN ver=3.1.1 \
 	&& git clone https://github.com/shadowsocks/shadowsocks-libev \
 	&& cd shadowsocks-libev \
 	&& git checkout v$ver -b v$ver \
-	&& git submodule init && git submodule update \
+	&& git submodule update --init --recursive \
 	&& ./autogen.sh \
 	&& LIBS="-lpthread -lm" \
 	LDFLAGS="-Wl,-static -static -static-libgcc -L/usr/local/libudns/lib -L/usr/local/libev/lib" \
