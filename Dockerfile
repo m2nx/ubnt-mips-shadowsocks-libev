@@ -50,14 +50,6 @@ RUN ver=4.24 \
 	&& make \
 	&& make install
 
-# libudns
-RUN git clone https://github.com/shadowsocks/libudns \
-	&& cd libudns \
-	&& ./autogen.sh \
-	&& ./configure --host=mipsel-linux-gnu --prefix=/usr/local/libudns \
-	&& make \
-	&& make install
-
 # c-ares
 RUN ver=1.12.0 \
 	&& wget https://c-ares.haxx.se/download/c-ares-$ver.tar.gz \
@@ -75,8 +67,8 @@ RUN ver=3.1.1 \
 	&& git submodule update --init --recursive \
 	&& ./autogen.sh \
 	&& LIBS="-lpthread -lm" \
-	LDFLAGS="-Wl,-static -static -static-libgcc -L/usr/local/libudns/lib -L/usr/local/libev/lib" \
-	CFLAGS="-I/usr/local/libudns/include -I/usr/local/libev/include" \
+	LDFLAGS="-Wl,-static -static -static-libgcc -L/usr/local/libev/lib" \
+	CFLAGS="-I/usr/local/libev/include" \
 	./configure --host=mipsel-linux-gnu --prefix=/usr/local/shadowsocks-libev \
 	--disable-ssp \
 	--disable-documentation \
