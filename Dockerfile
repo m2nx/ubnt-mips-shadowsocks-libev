@@ -14,7 +14,8 @@ RUN apt update && apt install -y \
 	g++-mipsel-linux-gnu \
 	gcc-mipsel-linux-gnu \
 	gettext build-essential \
-	libtool
+	libtool \
+    gettext
 
 # mbedtls
 RUN mbedtls_ver=2.6.0 \
