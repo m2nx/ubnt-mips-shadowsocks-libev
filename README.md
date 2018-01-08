@@ -13,23 +13,23 @@ EdgeRouter X 基于 mipsel，由于 erx 存储空间不足，无法直接在机�
 使用 Dockerfile build 构建依赖环境镜像，在 docker run 的时候执行 shell 脚本执行编译。 docker 化的目的是只在容器中进行编译，不影响当前操作系统，编译完成后映射到主机文件夹，可以直接使用我构建好的上传到 dockerhub 上的镜像或者自己使用 Dockerfile build。
 * 克隆仓库：
   ```
-   git clone https://github.com/imMMX/shadowsocks-erx.git
+   git clone https://github.com/imMMX/ubnt-erx-shadowsocks-libev.git
   ```
 * 进入文件夹
   ```
-  cd shadowsocks-erx
+  cd ubnt-erx-shadowsocks-libev
   ```
 
 * 使用现有镜像：
   ```
-  docker run -it -v $(pwd):/usr/local/ss immmx/shadowsocks-erx
+  docker run -it -v $(pwd):/usr/local/ss immmx/ubnt-erx-shadowsocks-libev
   ```
   等待编译完成后会自动退出容器，在当前目录下生成名为 erx 的文件夹，其中 bin 文件夹中的就是所需要的二进制文件。
 
   当然，你也可以自己使用 Dockerfile 直接 build 镜像
   ```
-  docker build --tag shadowsocks-erx .
-  docker run -it -v $(pwd):/usr/local/ss shadowsocks-erx
+  docker build --tag ubnt-erx-shadowsocks-libev .
+  docker run -it -v $(pwd):/usr/local/ss ubnt-erx-shadowsocks-libev
   ```
   
 2. Shell  
