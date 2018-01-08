@@ -1,13 +1,13 @@
-# Shadowsocks-erx
-为基于 mipsel 的 erx 交叉编译 shadowsocks-libev  
+# ubnt-erx-shadowsocks
+为基于 mipsel 的 Ubiquiti EdgeRouter X ( 简称 erx ) 交叉编译 shadowsocks-libev
 Cross complie shadowsocks for erx based on mipsel
 
 ## 说明
 
-由于 erx 存储空间不足，无法直接在机器上编译，但是可以运行基于 mipsel 已编译的程序，所以可以在其他机器上先交叉编译完成在上传到 erx 上执行。
+EdgeRouter X 基于 mipsel，由于 erx 存储空间不足，无法直接在机器上编译，但是可以运行基于 mipsel 已编译的程序，所以可以在其他机器上先交叉编译完成在上传到 erx 上执行。
 
 ## 使用方法
-仓库中含有 Dockerfile 文件以及脚本文件，可以使用 docker 容器化编译或者使用脚本直接在主机 (ubuntu 16.04) 上编译。
+仓库中含有 Dockerfile 文件以及脚本文件，可以使用 docker 容器化编译后将生成的文件夹映射到主机上或者使用脚本直接在主机 (ubuntu 16.04) 上编译。
 
 1. Docker  
 使用 Dockerfile build 构建依赖环境镜像，在 docker run 的时候执行 shell 脚本执行编译。 docker 化的目的是只在容器中进行编译，不影响当前操作系统，编译完成后映射到主机文件夹，可以直接使用我构建好的上传到 dockerhub 上的镜像或者自己使用 Dockerfile build。
