@@ -16,7 +16,7 @@ CFLAGS="-I/usr/local/libev/include" \
 --with-cares=/usr/local/libcares \
 --with-sodium=/usr/local/libsodium \
 && make \
-&& make install
-&& rm -rf shadowsocks-libev
+&& make install \
+&& rm -rf ../shadowsocks-libev
 
 
