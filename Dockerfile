@@ -1,10 +1,13 @@
-From ubuntu:16.04
+From buildpack-deps:xenial-scm
 
 LABEL maintainer="MMX <4isnothing@gmail.com>"
 
+
+WORKDIR /usr/local/ss/
 # netease source
 #COPY sources.list /etc/apt/sources.list
-WORKDIR /usr/local/ss/
+VOLUME /usr/local/ss/
+COPY . /usr/local/ss/
 RUN apt update && apt install -y \
 	wget \
 	curl \
@@ -38,6 +41,7 @@ RUN ver=8.40 \
 # libsodium
 RUN git clone https://github.com/jedisct1/libsodium \
 	&& cd libsodium/ \
+        && git checkout stable \
 	&& ./autogen.sh \
 	&& ./configure --host=mipsel-linux-gnu --prefix=/usr/local/libsodium --disable-ssp --disable-shared \
 	&& make && make install
@@ -61,21 +65,6 @@ RUN ver=1.12.0 \
 	&& make install
 
 # shadowsocks-libev
-RUN ver=3.1.1 \
-	&& git clone https://github.com/shadowsocks/shadowsocks-libev \
-	&& cd shadowsocks-libev \
-	&& git checkout v$ver -b v$ver \
-	&& git submodule update --init --recursive \
-	&& ./autogen.sh \
-	&& LIBS="-lpthread -lm" \
-	LDFLAGS="-Wl,-static -static -static-libgcc -L/usr/local/libev/lib" \
-	CFLAGS="-I/usr/local/libev/include" \
-	./configure --host=mipsel-linux-gnu --prefix=/usr/local/ss/shadowsocks-libev \
-	--disable-ssp \
-	--disable-documentation \
-	--with-mbedtls=/usr/local/mbedtls \
-	--with-pcre=/usr/local/pcre \
-	--with-sodium=/usr/local/libsodium \
-	--with-cares=/usr/local/libcares \
-	&& make \
-	&& make install
+RUN chmod +x /usr/local/ss/entrypoint.sh 
+
+ENTRYPOINT ["/usr/local/ss/entrypoint.sh"]
