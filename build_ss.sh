@@ -69,7 +69,7 @@ cares_ver=1.13.0 \
 
 # Install shadowsocks-libev
 cd $ss_path
-ss_ver=3.1.3 \
+ss_ver=3.2.0 \
 	&& git clone https://github.com/shadowsocks/shadowsocks-libev \
 	&& cd shadowsocks-libev \
 	&& git checkout v$ss_ver -b v$ss_ver \

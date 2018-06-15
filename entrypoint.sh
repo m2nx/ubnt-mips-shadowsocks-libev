@@ -1,5 +1,5 @@
 #!/bin/bash
-ver=3.1.3
+ver=3.2.0
 cd /usr/local/ss
 git clone https://github.com/shadowsocks/shadowsocks-libev
 cd shadowsocks-libev 
