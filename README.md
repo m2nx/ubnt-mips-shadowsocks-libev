@@ -1,6 +1,6 @@
-# ubnt-erx-shadowsocks-libev
+# ubnt-mips-shadowsocks-libev
 为基于 mipsel 的 Ubiquiti EdgeRouter X ( 简称 erx ) 或者基于 mip64 的 USG、er-4 等交叉编译 shadowsocks-libev
-Cross complie shadowsocks for UBNT devices
+Cross complie shadowsocks for UBNT devices based on mipsel or mips64
 Ci: <img src="https://travis-ci.org/imMMX/ubnt-erx-shadowsocks-libev.svg?branch=master" alt="build:">
 ## 说明
 
