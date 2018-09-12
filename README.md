@@ -1,7 +1,7 @@
 # ubnt-mips-shadowsocks-libev
 为基于 mipsel 的 Ubiquiti EdgeRouter X ( 简称 erx ) 或者基于 mip64 的 USG、er-4 等交叉编译 shadowsocks-libev
 Cross complie shadowsocks for UBNT devices based on mipsel or mips64
-Ci: <img src="https://travis-ci.org/imMMX/ubnt-erx-shadowsocks-libev.svg?branch=master" alt="build:">
+Ci: [![Build Status](https://travis-ci.org/imMMX/ubnt-mips-shadowsocks-libev.svg?branch=master)](https://travis-ci.org/imMMX/ubnt-mips-shadowsocks-libev)
 ## 说明
 
 EdgeRouter X 基于 mipsel，由于 erx 存储空间不足，无法直接在机器上编译，但是可以运行基于 mipsel 已编译的程序，所以可以在其他机器上先交叉编译完成在上传到 erx 上执行。 而 mip64 的需要将脚本中的 `mipsel-linux-gnu` 替换为 `mips64-linux-gnuabi64`
