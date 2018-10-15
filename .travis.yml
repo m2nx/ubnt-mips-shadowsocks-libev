@@ -6,7 +6,8 @@ services:
   - docker
 
 before_install:
-  - docker build -t ubnt-erx-shadowsocks-libev .
+  - docker build -t ubnt-mips-shadowsocks-libev .
   
 script:
-  - docker run -it -v $(pwd):/usr/local/ss ubnt-erx-shadowsocks-libev
+  - docker run -it --name ubnt-mips-shadowsocks-libev ubnt-mips-shadowsocks-libev
+  - docker run -it -e ARCHITECH="mips64" --name ubnt-mips-shadowsocks-libev ubnt-mips-shadowsocks-libev
