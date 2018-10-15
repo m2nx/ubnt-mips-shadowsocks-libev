@@ -10,4 +10,4 @@ before_install:
   
 script:
   - docker run -it --name ubnt-mips-shadowsocks-libev ubnt-mips-shadowsocks-libev
-  - docker run -it -e ARCHITECH="mips64" --name ubnt-mips-shadowsocks-libev ubnt-mips-shadowsocks-libev
+  - docker run -it -e ARCHITECH="mips64" --name ubnt-mips64-shadowsocks-libev ubnt-mips-shadowsocks-libev
