@@ -14,8 +14,13 @@ libev_ver=4.24
 cares_ver=1.13.0
 # set path
 prefix_path='/opt/ss-mips'
-# mips use mipel-linux-gnu, mips64 use mips64-linux-gnuabi64
-host=mipsel-linux-gnu
+# mips use mipel-linux-gnu, mips64 use mips64-linux-gnuabi64, default is mips
+if [ $ARCHITECH == "mips64" ]
+then
+    host=mips64-linux-gnuabi64
+else
+    host=mipsel-linux-gnu
+fi
 
 echo -e "$green Installing mbedtls...$end"
 wget --no-check-certificate https://tls.mbed.org/download/mbedtls-$mbedtls_ver-gpl.tgz \
