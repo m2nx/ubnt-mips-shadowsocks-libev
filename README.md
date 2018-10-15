@@ -5,6 +5,8 @@ Cross complie shadowsocks for UBNT devices based on mips or mips64
 
 Ci: [![Build Status](https://travis-ci.org/imMMX/ubnt-mips-shadowsocks-libev.svg?branch=master)](https://travis-ci.org/imMMX/ubnt-mips-shadowsocks-libev)  
 
+## 下载  
+编译好的二进制文件请前往 [release](https://github.com/imMMX/ubnt-mips-shadowsocks-libev/releases/tag/3.2.0) 下载  
 ## 样例  
 * mips64  
 ![mips64](https://github.com/imMMX/ubnt-mips-shadowsocks-libev/blob/master/screenshot/mips64.jpeg)  
