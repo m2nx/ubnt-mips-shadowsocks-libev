@@ -13,6 +13,8 @@ Ci: [![Build Status](https://travis-ci.org/imMMX/ubnt-mips-shadowsocks-libev.svg
 * mips  
 ![mips64](https://github.com/imMMX/ubnt-mips-shadowsocks-libev/blob/master/screenshot/mips.jpeg)
 
+配合 dnsmasq 以及 iptables 实现内外分流科学上网。教程[SS脚本部署](https://github.com/imMMX/ubnt-router-shadowsocks)
+
 ## 使用方法  
 1. 安装 Docker  
   ```curl -sSL https://get.docker.com/ | sh ```
