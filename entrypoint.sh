@@ -84,3 +84,24 @@ CFLAGS="-I$prefix_path/libev/include" \
 --with-sodium=$prefix_path/libsodium \
 && make \
 && make install
+
+echo -e "$green Installing simple-obfs...$end"
+cd
+git clone https://github.com/shadowsocks/simple-obfs
+cd simple-obfs
+git submodule init && git submodule update
+./autogen.sh
+LIBS="-lpthread -lm" \
+LDFLAGS="-Wl,-static -static -static-libgcc \
+-L$prefix_path/libsodium/lib \
+-L$prefix_path/libev/lib \
+-L$prefix_path/libcares/lib" \
+CFLAGS="-I$prefix_path/libsodium/include \
+-I$prefix_path/libev/include \
+-I$prefix_path/libcares/include" \
+./configure --host=$host  --prefix=$prefix_path/ss-bin \
+--disable-ssp \
+--disable-documentation \
+&& make \
+&& make install
+
