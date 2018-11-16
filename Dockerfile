@@ -14,6 +14,7 @@ RUN apt update && apt install -y \
 	gcc-mipsel-linux-gnu \
 	g++-mips64-linux-gnuabi64 \
 	gcc-mips64-linux-gnuabi64 \
-	build-essential
+	build-essential \
+	upx
 
 ENTRYPOINT ["/opt/ss-mips/entrypoint.sh"]

@@ -18,8 +18,10 @@ prefix_path='/opt/ss-mips'
 if [ $ARCHITECH == "mips64" ]
 then
     host=mips64-linux-gnuabi64
+    strip=mips64-linux-gnuabi64-strip
 else
     host=mipsel-linux-gnu
+    strip=mipsel-linux-gnu-strip
 fi
 
 echo -e "$green Installing mbedtls...$end"
@@ -105,3 +107,5 @@ CFLAGS="-I$prefix_path/libsodium/include \
 && make \
 && make install
 
+find $prefix_path/ss-bin ! -name 'ss-nat' -type f | xargs $strip
+find $prefix_path/ss-bin ! -name 'ss-nat' -type f | xargs upx
