@@ -107,5 +107,11 @@ CFLAGS="-I$prefix_path/libsodium/include \
 && make \
 && make install
 
-find $prefix_path/ss-bin/bin ! -name 'ss-nat' -type f | xargs $strip
-find $prefix_path/ss-bin/bin ! -name 'ss-nat' -type f | xargs upx
+if [ $ARCHITECH == "mips64" ]
+then
+    find $prefix_path/ss-bin/bin ! -name 'ss-nat' -type f | xargs $strip
+else
+    find $prefix_path/ss-bin/bin ! -name 'ss-nat' -type f | xargs $strip
+    find $prefix_path/ss-bin/bin ! -name 'ss-nat' -type f | xargs upx
+fi
+
