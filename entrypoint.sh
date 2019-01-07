@@ -9,7 +9,7 @@ mbedtls_ver=2.6.0
 # pcre
 pcre_ver=8.41
 # libev
-libev_ver=4.24
+libev_ver=4.25
 # c-ares
 cares_ver=1.13.0
 # set path
