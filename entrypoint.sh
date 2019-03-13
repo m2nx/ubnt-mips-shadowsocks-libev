@@ -3,7 +3,7 @@
 green="\033[0;32m"
 end="\033[0m"
 # shadowsocks version
-shadowsocks_ver=3.2.3
+shadowsocks_ver=3.2.5
 # mbedtls
 mbedtls_ver=2.6.0
 # pcre
