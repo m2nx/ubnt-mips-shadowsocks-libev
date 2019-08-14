@@ -7,7 +7,7 @@ shadowsocks_ver=3.3.1
 # mbedtls
 mbedtls_ver=2.6.0
 # pcre
-pcre_ver=8.41
+pcre_ver=8.43
 # libev
 libev_ver=4.25
 # c-ares
@@ -34,8 +34,8 @@ wget --no-check-certificate https://tls.mbed.org/download/mbedtls-$mbedtls_ver-g
 
 echo -e "$green Installing pcre...$end"
 cd
-wget ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/pcre-$pcre_ver.tar.gz \
-    && tar xvf pcre-$pcre_ver.tar.gz \
+wget https://ftp.pcre.org/pub/pcre/pcre-$pcre_ver.tar.bz2 \
+    && tar xvf pcre-$pcre_ver.tar.bz2 \
     && cd pcre-$pcre_ver \
     && ./configure --host=$host --prefix=$prefix_path/pcre --disable-shared --enable-utf8 --enable-unicode-properties \
     && make \
